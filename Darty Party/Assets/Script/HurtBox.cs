@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class HurtBox : MonoBehaviour
 {
+    [SerializeField] private Dart1 dart; 
+    [SerializeField] private Dart1 dart2; 
+    
     public int point;
     public bool triggered = false;
     public bool ready = true;
-    [SerializeField] private Dart1 dart; 
-
+    
+    // Once the dart enter the hurt box it will update score depending on area
     private void OnTriggerEnter(Collider other)
     {
         triggered = true;
@@ -17,21 +20,20 @@ public class HurtBox : MonoBehaviour
         {
             if (triggered == true)
             {
-                StartCoroutine(Waiting());
                 ready = false;
+                StartCoroutine(Waiting());
             }
         }
     }
 
-    private void triggeredAction()
-    {
-        dart.pointChanger(point);
-        StartCoroutine(Waiting());
-    }
-
     IEnumerator Waiting()
     {
-        dart.pointChanger(point);
+        if(dart.isTurn()) {
+            dart.pointChanger(point);
+        }
+        else if(dart2.isTurn()) {
+            dart2.pointChanger(point);
+        }
         yield return new WaitForSeconds(1.1f);
         triggered = false;
         ready = true;
