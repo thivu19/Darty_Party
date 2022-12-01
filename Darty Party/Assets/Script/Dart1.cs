@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Dart1 : MonoBehaviour
 {
@@ -159,6 +161,7 @@ public class Dart1 : MonoBehaviour
         {
             totalPoints = temp;
             Debug.Log("Dart POINTS updated");
+            SceneManager.LoadScene("Winning");
             
         } 
         else if (temp < 0) // Check if the score is less than 0 then bust
