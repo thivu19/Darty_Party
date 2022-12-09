@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 5c894de84fa514f4dbef32fbb6a22574
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/DartGameArea.unity
+    guid: af143dc9ba08686479f2fe0c0a4d68ee
   - enabled: 1
     path: Assets/Scenes/Winning.unity
     guid: 6850f1639b7a182419553b47b7350f12
